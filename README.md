@@ -39,14 +39,11 @@ In this project, you can run the following scripts:
 ## Folder Structure
 
 ```
-apis-collection
+rc-fakestore-api
 ├── dist
     ├── src
     ├── app.js
 ├── node_modules
-├── public
-│   └── error
-│   └── index.html
 └── src
     ├── controllers
     ├── db
