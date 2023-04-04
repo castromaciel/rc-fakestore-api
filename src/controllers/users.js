@@ -4,6 +4,8 @@ import User from "../model/User.js"
 
 export const getUsers = async (req, res) => {
 
+  // const { accessToken } = req.headers
+
   const { limit = 10, from = 0} = req.query
   // console.log({limit, from})
 

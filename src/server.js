@@ -1,9 +1,9 @@
-import express from 'express'
-// import productsRoutes from '../src/routes/products.routes.js'
-import userRoutes from '../src/routes/users.routes.js'
-// import { productsRoutes, userRoutes } from '../src/routes/index.js'
 import cors from 'cors'
+import express from 'express'
 import { dbConnection } from './db/config.js'
+import {
+  loginRoutes, userRoutes
+} from './routes/index.js'
 
 export class Server {
 
@@ -29,7 +29,7 @@ export class Server {
 
   routes() {
     this.app.use('/api/users', userRoutes)
-    // this.app.use('/api/products', productsRoutes)
+    this.app.use('/api/login', loginRoutes)
   }
 
   listen() {
