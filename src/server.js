@@ -1,5 +1,6 @@
 import cors from 'cors'
 import express from 'express'
+import { apiPaths } from './constants/index.js'
 import { dbConnection } from './db/config.js'
 import {
   loginRoutes, userRoutes
@@ -28,8 +29,8 @@ export class Server {
   }
 
   routes() {
-    this.app.use('/api/users', userRoutes)
-    this.app.use('/api/login', loginRoutes)
+    this.app.use(apiPaths.users, userRoutes)
+    this.app.use(apiPaths.login, loginRoutes)
   }
 
   listen() {

@@ -29,10 +29,10 @@ export const authentication = async (req, res) => {
     email: user.email
   }
 
-  const accessToken = jwt.sign(payload, signature, { expiresIn: 30 })
+  const accessToken = jwt.sign(payload, signature, { expiresIn: '1h' })
   
   res.json({
     message: `Bienvenido ${user.username}!!`,
-    accesToken,
+    accessToken,
   })
 }
