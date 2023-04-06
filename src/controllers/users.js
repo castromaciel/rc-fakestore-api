@@ -60,14 +60,9 @@ export const createUser =  async (req, res) => {
 
   // Validar que los usuarios (por email y nombre de usuario sean unicos)
   // refactorizar con middlewares
-  const existEmail = await User.findOne({ email })
+  
   const existUsername = await User.findOne({ username })
 
-  if ( existEmail ) {
-    return res.status(400).json({
-      message: 'El correo ya existe'
-    })
-  }
 
   if ( existUsername ) {
     return res.status(400).json({
